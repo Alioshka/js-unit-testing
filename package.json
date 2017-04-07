@@ -1,0 +1,29 @@
+{
+  "name": "js-unit-testing",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "test": "gulp test",
+    "lint": "eslint ./",
+    "prepush": "eslint ./"
+  },
+  "author": {
+    "name": "Aliaksei Alioshka"
+  },
+  "license": "",
+  "dependencies": {
+    "gulp": "~3.9.1",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-jasmine": "^2.3.0",
+    "jasmine-reporters": "^2.1.1"
+  },
+  "engines": {
+    "node": ">=6.9.1",
+    "npm": ">=3.10.8"
+  },
+  "devDependencies": {
+    "eslint": "^2.11.1",
+    "husky": "^0.11.4"
+  }
+}
