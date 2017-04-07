@@ -5,8 +5,7 @@
   "main": "",
   "scripts": {
     "test": "gulp test",
-    "lint": "eslint ./",
-    "prepush": "eslint ./"
+    "lint": "eslint ./"
   },
   "author": {
     "name": "Aliaksei Alioshka"
@@ -23,7 +22,6 @@
     "npm": ">=3.10.8"
   },
   "devDependencies": {
-    "eslint": "^2.11.1",
-    "husky": "^0.11.4"
+    "eslint": "^2.11.1"
   }
 }

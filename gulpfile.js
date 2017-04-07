@@ -5,6 +5,7 @@ const reporters = require('jasmine-reporters');
 const jasmine = require('gulp-jasmine');
 const istanbul = require('gulp-istanbul');
 const del = require('del');
+const execSync = require('child_process').execSync;
 
 
 const sources = [
@@ -60,7 +61,11 @@ gulp.task('test:coverage', ['clean', 'test:coverage:prepare'], () => {
         }));
 });
 
-gulp.task('test', ['test:coverage'], () => {
+gulp.task('lint', () => {
+    execSync('npm run lint', {stdio: 'inherit'});
+});
+
+gulp.task('test', ['lint' ,'test:coverage'], () => {
     return gulp.src(testSources)
         .pipe(jasmine(jasmineOpts));
 });
