@@ -15,8 +15,8 @@ describe('readData', () => {
     });
 
     it('should read data from from json file', () => {
-        let data = readData('somefile.json');
-        expect(data).toBe('data from json file');
+        let data = readData('test/test-data/test.json');
+        expect(data.data).toBe('data from json file');
     });
 
     it('should read data from from yml file', () => {
