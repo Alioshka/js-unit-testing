@@ -1,6 +1,10 @@
 'use strict';
 
-const readData = require('../lib/readData');
+const path = require('path');
+// instead of relative path with '../../'
+// it is better to use path.resolve
+//const readData = require('../lib/readData');
+const readData = require(path.resolve('lib/readData'));
 
 describe('readData', () => {
 
