@@ -14,13 +14,11 @@ describe('Scope', () => {
         let scope = new Scope();
 
         let watchFn = jasmine.createSpy();
-        let listenerFn = jasmine.createSpy();
 
         let watchFn2 = jasmine.createSpy();
-        let listenerFn2 = jasmine.createSpy();
 
-        scope.$watch(watchFn, listenerFn);
-        scope.$watch(watchFn2, listenerFn2);
+        scope.$watch(watchFn, () => {});
+        scope.$watch(watchFn2, () => {});
 
         scope.$digest();
 
@@ -28,14 +26,15 @@ describe('Scope', () => {
         expect(watchFn2).toHaveBeenCalledWith(scope);
     });
 
-    it('calls the listener function when the watched value changes', () => {
+    it('calls the listener function only when the watched value changes', () => {
         let scope = new Scope();
-        scope.counter = 0;
         scope.watchedValue = 'a';
 
+        let listenerFn = jasmine.createSpy();
+
         scope.$watch(
-            function(_scope) { return _scope.watchedValue; },
-            function(newValue, oldValue, _scope) { _scope.counter++; }
+            _scope =>  _scope.watchedValue,
+            listenerFn
         );
 
         scope.$digest();
@@ -51,6 +50,6 @@ describe('Scope', () => {
 
         scope.$digest();
 
-        expect(scope.counter).toBe(3);
+        expect(listenerFn.calls.count()).toEqual(3);
     });
 });
