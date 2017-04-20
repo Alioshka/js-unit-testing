@@ -30,29 +30,27 @@ describe('Scope', () => {
 
     it('calls the listener function when the watched value changes', () => {
         let scope = new Scope();
-
-        scope.someValue = 'a';
         scope.counter = 0;
+        scope.watchedValue = 'a';
 
         scope.$watch(
-            function(_scope) { return _scope.someValue; },
+            function(_scope) { return _scope.watchedValue; },
             function(newValue, oldValue, _scope) { _scope.counter++; }
         );
 
-        expect(scope.counter).toBe(0);
+        scope.$digest();
+        scope.$digest();
+
+        scope.watchedValue = 'b';
 
         scope.$digest();
-        expect(scope.counter).toBe(1);
+        scope.$digest();
+        scope.$digest();
+
+        scope.watchedValue = 'c';
 
         scope.$digest();
-        expect(scope.counter).toBe(1);
 
-        scope.someValue = 'b';
-        expect(scope.counter).toBe(1);
-        scope.$digest();
-        expect(scope.counter).toBe(2);
-
-        scope.$digest();
-        expect(scope.counter).toBe(2);
+        expect(scope.counter).toBe(3);
     });
 });
