@@ -23,7 +23,10 @@ const jasmineOpts = {
             verbosity: 3,
             color: true,
             showStack: true
-        })
+        }),
+        new reporters.JUnitXmlReporter({
+            savePath: './report/junit/'
+        }),
     ],
     includeStackTrace: true,
     verbose: true,

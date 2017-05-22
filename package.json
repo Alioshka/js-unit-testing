@@ -5,6 +5,7 @@
   "main": "",
   "scripts": {
     "test": "gulp test",
+    "test:coverage": "gulp test:coverage",
     "lint": "eslint ./"
   },
   "author": {
