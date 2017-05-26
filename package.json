@@ -13,7 +13,7 @@
   },
   "license": "",
   "dependencies": {
-    "gulp": "~3.9.1",
+    "gulp": "^3.9.1",
     "gulp-istanbul": "^0.10.3",
     "gulp-jasmine": "^2.3.0",
     "jasmine-reporters": "^2.1.1"
