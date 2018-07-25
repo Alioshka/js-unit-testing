@@ -25,6 +25,17 @@ npm run test:coverage
 npm run lint
 ```
 
+## Git hooks
+* we use [husky](https://www.npmjs.com/package/husky) to automatically install git hooks during `npm i` command
+```
+  "scripts": {
+    ...
+    "precommit": "add here staff you want to be added to git precommit hook",
+    "prepush": "add here staff you want to be added to git precommit hook",
+    "you git hook": ""
+  },
+```
+
 ## Home tasks
 ### 1. based on example in [index.js](./index.js) and [index.spec.js](./test/index.spec.js),
 create the Calculator class with defined methods:
