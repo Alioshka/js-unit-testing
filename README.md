@@ -31,7 +31,7 @@ npm run lint
   "scripts": {
     ...
     "precommit": "add here staff you want to be added to git precommit hook",
-    "prepush": "add here staff you want to be added to git precommit hook",
+    "prepush": "add here staff you want to be added to git prepush hook",
     "you git hook": ""
   },
 ```
